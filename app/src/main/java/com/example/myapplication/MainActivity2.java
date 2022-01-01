@@ -12,8 +12,9 @@ public class MainActivity2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-        Intent intetnt = getIntent();
-        String s = intetnt.getStringExtra("test");
-        Toast.makeText(this, s, Toast.LENGTH_SHORT).show();
+//        Intent intetnt = getIntent();
+//        String s = intetnt.getStringExtra("test");
+//        Toast.makeText(this, s, Toast.LENGTH_SHORT).show();
+        FormInfo fi = new FormInfo(this,R.id.linearLayout);
     }
 }
