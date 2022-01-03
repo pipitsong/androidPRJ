@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -17,6 +18,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button bt ;
     EditText et ;
     TextView tv;
+
+    public static final int  SUCCES_CODE = 180;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +54,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         Intent intetnt = new Intent(MainActivity.this, MainActivity2.class );
         intetnt.putExtra("test",et.getText().toString().trim() );
-        startActivity(intetnt);
+        startActivityForResult(intetnt,SUCCES_CODE);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        Toast.makeText(this, String.valueOf(resultCode) , Toast.LENGTH_SHORT).show();
     }
 }

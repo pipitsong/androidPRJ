@@ -23,6 +23,8 @@ public class MainActivity2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Toast.makeText(MainActivity2.this, "button overrideed it", Toast.LENGTH_SHORT).show();
+                setResult(50);
+                finish();
             }
         });
     }
