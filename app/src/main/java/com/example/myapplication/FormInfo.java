@@ -13,6 +13,10 @@ public class FormInfo implements View.OnClickListener {
 
     private Button bt;
 
+    public Button getBt() {
+        return bt;
+    }
+
     public FormInfo(Activity activiti , int layout)
     {
         this.A = activiti ;
