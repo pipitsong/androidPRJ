@@ -60,6 +60,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        Toast.makeText(this, String.valueOf(resultCode) , Toast.LENGTH_SHORT).show();
+        if ( requestCode == SUCCES_CODE && resultCode == 50 ){
+            if ( data.getExtras().containsKey("DATA") ){
+                Toast.makeText(this, data.getStringExtra("DATA") , Toast.LENGTH_SHORT).show();
+            }
+
+        }
     }
 }

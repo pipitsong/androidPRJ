@@ -22,8 +22,10 @@ public class MainActivity2 extends AppCompatActivity {
         bt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.putExtra("DATA","SALAM1");
                 Toast.makeText(MainActivity2.this, "button overrideed it", Toast.LENGTH_SHORT).show();
-                setResult(50);
+                setResult(50,intent);
                 finish();
             }
         });
