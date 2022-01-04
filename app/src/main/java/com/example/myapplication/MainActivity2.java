@@ -1,9 +1,11 @@
 package com.example.myapplication;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -17,6 +19,12 @@ public class MainActivity2 extends AppCompatActivity {
 //        Intent intetnt = getIntent();
 //        String s = intetnt.getStringExtra("test");
 //        Toast.makeText(this, s, Toast.LENGTH_SHORT).show();
+
+        if( getSupportActionBar() != null )
+        {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+
         FormInfo fi = new FormInfo(this,R.id.linearLayout);
         Button bt = fi.getBt();
         bt.setOnClickListener(new View.OnClickListener() {
@@ -29,5 +37,14 @@ public class MainActivity2 extends AppCompatActivity {
                 finish();
             }
         });
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if(item.getItemId() == android.R.id.home)
+        {
+            finish();
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
