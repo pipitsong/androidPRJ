@@ -31,6 +31,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         bt = findViewById(R.id.button);
         bt.setOnClickListener(this);
 
+        Button bt_show_a3 = findViewById(R.id.button2);
+        bt_show_a3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,MainActivity3.class);
+                startActivity(intent);
+            }
+        });
+
         et = findViewById(R.id.editTextTextPersonName );
         et.addTextChangedListener(new TextWatcher() {
             @Override
