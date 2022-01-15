@@ -81,10 +81,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        menu.addSubMenu("SubMenu1").add("openA4").setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+        menu.addSubMenu("SubMenu1").add("listMenu").setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem menuItem) {
-
+                startActivity(new Intent(MainActivity.this,ListViewAvtivity.class));
                 return false;
             }
         });
