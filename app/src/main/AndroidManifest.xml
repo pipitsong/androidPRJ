@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
+            android:name=".ListViewActivity_MyContacts"
+            android:exported="false" />
+        <activity
             android:name=".ListViewAvtivity"
             android:exported="false" />
         <activity

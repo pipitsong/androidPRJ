@@ -9,6 +9,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.SubMenu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -81,13 +82,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        menu.addSubMenu("SubMenu1").add("listMenu").setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+        SubMenu m = menu.addSubMenu("SubMenu1");
+        m.add("listMenu").setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem menuItem) {
                 startActivity(new Intent(MainActivity.this,ListViewAvtivity.class));
                 return false;
             }
         });
+
+        m.add("listMyContacts").setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem menuItem) {
+                startActivity(new Intent(MainActivity.this,ListViewActivity_MyContacts.class));
+                return false;
+            }
+        });
+
         return super.onCreateOptionsMenu(menu);
     }
 }
