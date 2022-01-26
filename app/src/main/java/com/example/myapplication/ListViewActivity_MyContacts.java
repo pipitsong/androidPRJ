@@ -13,7 +13,8 @@ public class ListViewActivity_MyContacts extends AppCompatActivity {
 
     List<MyContacts> mylist;
     ListView lv;
-    ArrayAdapter<MyContacts> adapter;
+//    ArrayAdapter<MyContacts> adapter;
+    CreateListFromMyContactsWithLayout adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +28,8 @@ public class ListViewActivity_MyContacts extends AppCompatActivity {
 
     private void runme() {
         lv = findViewById(R.id.listview_mycontacts);
-        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,mylist);
+//        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,mylist);
+        adapter = new CreateListFromMyContactsWithLayout(this,mylist);
         lv.setAdapter(adapter);
     }
 }
